@@ -30,6 +30,7 @@ public class QSMEP implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
+		GWT.log("== getAllAuthor() ===========================");
 		WSClient wsClient = new WSClient();
 		wsClient.open();
 

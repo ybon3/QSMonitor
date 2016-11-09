@@ -1,6 +1,7 @@
 package com.dtc.test.qsm.server;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,15 +19,14 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class RpcServiceImpl extends RemoteServiceServlet implements RpcService {
 	private static final long serialVersionUID = 1L;
 
-	int index = 0;
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		ApplicationContext context = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-		AuthorDao dao = (AuthorDao)context.getBean("customerServiceProxy");
-		List<AuthorRecord> result = dao.getAllBeta();
+		AuthorDao dao = (AuthorDao)context.getBean("authorDao");
+		List<AuthorRecord> result = dao.getAll();
 
 		System.out.println("== AUTHOR ===========================");
 		for (AuthorRecord r : result) {
@@ -39,4 +39,13 @@ public class RpcServiceImpl extends RemoteServiceServlet implements RpcService {
 			System.out.println();
 		}
 	}
+
+//	@Override
+//	public List<AuthorRecord> getAllAuthor() {
+//		System.out.println("== getAllAuthor() ===========================");
+//		ArrayList<AuthorRecord> res = new ArrayList<>();
+//		AuthorDao dao = new AuthorDao();
+//		res.addAll(dao.getAll());
+//		return res;
+//	}
 }

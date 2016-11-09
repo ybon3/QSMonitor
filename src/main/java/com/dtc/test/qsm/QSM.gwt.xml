@@ -6,8 +6,10 @@
 
 	<source path="client" />
 	<source path="shared" />
+<!-- 	<source path="server.dao.orm.tables.records" /> -->
 
-	<entry-point class="com.dtc.test.qsm.client.QSMEP" />
+	<entry-point class="com.dtc.test.qsm.client.MyEP" />
+<!-- 	<entry-point class="com.dtc.test.qsm.client.QSMEP" /> -->
 	<stylesheet src="reset.css" />
 	<add-linker name="xsiframe" />
 	<collapse-all-properties />	

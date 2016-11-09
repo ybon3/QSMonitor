@@ -8,6 +8,7 @@
 	</jdbc>
 
 	<generator>
+		<pojos>true</pojos>
 		<!-- Supported generators:
 			- org.jooq.util.JavaGenerator (default)
 			- org.jooq.util.ScalaGenerator -->
