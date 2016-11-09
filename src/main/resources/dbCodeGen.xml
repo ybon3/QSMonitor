@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.8.0.xsd">
+	<jdbc>
+		<driver>org.h2.Driver</driver>
+		<url>jdbc:h2:tcp://localhost/D:/workspace/JooqOverH2/data/sample</url>
+		<user></user>
+		<password></password>
+	</jdbc>
+
+	<generator>
+		<!-- Supported generators:
+			- org.jooq.util.JavaGenerator (default)
+			- org.jooq.util.ScalaGenerator -->
+		<name>org.jooq.util.JavaGenerator</name>
+	
+		<database>
+			<name>org.jooq.util.h2.H2Database</name>
+			<inputSchema>PUBLIC</inputSchema>
+			<includes>.*</includes>
+			<excludes></excludes>
+		</database>
+
+		<target>
+			<packageName>com.dtc.test.qsm.server.dao.orm</packageName>
+			<directory>C:/Users/Administrator/Desktop/GitRoot/QSMonitor/src/main/java</directory>
+		</target>
+	</generator>
+</configuration>

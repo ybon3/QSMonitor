@@ -9,4 +9,22 @@
 		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 	<context:annotation-config />
 	<bean id="webSocketServer" class="us.dontcareabout.gwt.server.WebSocketServer" />
+	
+	<bean id="myBeforeMethod" class="com.dtc.test.qsm.server.dao.MyBeforeMethod" />
+	<bean id="myAfterMethod" class="com.dtc.test.qsm.server.dao.MyAfterMethod" />
+	
+	<bean id="customerServiceProxy" 
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="authorDao" />
+		<property name="interceptorNames">
+			<list>
+				<value>myBeforeMethod</value>
+				<value>myAfterMethod</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="authorDao" class="com.dtc.test.qsm.server.dao.AuthorDaoImpl" />
+	<!-- Annotation 的做法可以參考 https://www.mkyong.com/spring3/spring-aop-aspectj-annotation-example/  -->
+	
 </beans>
