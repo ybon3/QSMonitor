@@ -8,7 +8,6 @@
 	</jdbc>
 
 	<generator>
-		<pojos>true</pojos>
 		<!-- Supported generators:
 			- org.jooq.util.JavaGenerator (default)
 			- org.jooq.util.ScalaGenerator -->
@@ -21,6 +20,10 @@
 			<excludes></excludes>
 		</database>
 
+		<generate>
+			<pojos>true</pojos>
+		</generate>
+		
 		<target>
 			<packageName>com.dtc.test.qsm.server.dao.orm</packageName>
 			<directory>C:/Users/Administrator/Desktop/GitRoot/QSMonitor/src/main/java</directory>

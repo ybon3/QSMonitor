@@ -6,7 +6,7 @@
 
 	<source path="client" />
 	<source path="shared" />
-<!-- 	<source path="server.dao.orm.tables.records" /> -->
+	<source path="server/dao/orm/tables/pojos" />
 
 	<entry-point class="com.dtc.test.qsm.client.MyEP" />
 <!-- 	<entry-point class="com.dtc.test.qsm.client.QSMEP" /> -->

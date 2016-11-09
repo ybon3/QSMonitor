@@ -8,6 +8,8 @@ import com.dtc.test.qsm.server.dao.orm.Keys;
 import com.dtc.test.qsm.server.dao.orm.Public;
 import com.dtc.test.qsm.server.dao.orm.tables.records.AuthorRecord;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,7 +36,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Author extends TableImpl<AuthorRecord> {
 
-    private static final long serialVersionUID = 1901365397;
+    private static final long serialVersionUID = 208085849;
 
     /**
      * The reference instance of <code>PUBLIC.AUTHOR</code>
@@ -63,6 +65,16 @@ public class Author extends TableImpl<AuthorRecord> {
      * The column <code>PUBLIC.AUTHOR.LAST_NAME</code>.
      */
     public final TableField<AuthorRecord, String> LAST_NAME = createField("LAST_NAME", org.jooq.impl.SQLDataType.VARCHAR.length(255).defaultValue(org.jooq.impl.DSL.field("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+
+    /**
+     * The column <code>PUBLIC.AUTHOR.DATE</code>.
+     */
+    public final TableField<AuthorRecord, Date> DATE = createField("DATE", org.jooq.impl.SQLDataType.DATE, this, "");
+
+    /**
+     * The column <code>PUBLIC.AUTHOR.TIME</code>.
+     */
+    public final TableField<AuthorRecord, Time> TIME = createField("TIME", org.jooq.impl.SQLDataType.TIME, this, "");
 
     /**
      * Create a <code>PUBLIC.AUTHOR</code> table reference
